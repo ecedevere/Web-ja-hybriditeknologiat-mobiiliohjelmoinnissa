@@ -28,11 +28,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    paddingTop: 80,
+    paddingLeft: 20,
   },
   heading: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 'bold',   
+    paddingBottom: 40,
   }
 });
