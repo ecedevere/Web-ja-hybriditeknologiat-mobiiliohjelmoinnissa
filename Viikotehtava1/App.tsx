@@ -5,9 +5,15 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 export default function App() {
   const [age, setAge] = useState<string>("")
   // console.log("age: "+age)
-  const ageAsNumber: number = !isNaN(Number(age)) === true ? Number(age) : 0
-  const lowerLimit =  (220 - ageAsNumber) * 0.65
-  const upperLimit = (220 - ageAsNumber) * 0.85
+  const ageAsNumber: number = Number(age)
+  let lowerLimit = 0
+  let upperLimit = 0
+
+  if (ageAsNumber !== 0 && !isNaN(ageAsNumber)) {
+    lowerLimit =  (220 - ageAsNumber) * 0.65
+    upperLimit = (220 - ageAsNumber) * 0.85
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Heart Rate Limits Calculator</Text>
