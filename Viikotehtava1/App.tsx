@@ -11,13 +11,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Heart Rate Limits Calculator</Text>
-      <Text>Enter your age:</Text>
-      <TextInput
+      <Text style={styles.enter}>Enter your age:</Text>
+      <TextInput style={styles.input}
         keyboardType='number-pad'
         value={age}
         onChangeText={setAge}
       />
-      <Text>Lower limit: {lowerLimit.toFixed(2)} bpm</Text>
+      <Text style={styles.limits}>Lower limit: {lowerLimit.toFixed(2)} bpm</Text>
       <Text>Upper limit: {upperLimit.toFixed(2)} bpm</Text>
       <StatusBar style="auto" />
     </View>
@@ -37,5 +37,18 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',   
     paddingBottom: 40,
+  },
+  input: {
+    borderWidth: 2,
+    borderColor: 'black',
+    borderRadius: 10,
+    width: 70,
+    padding: 10,
+  },
+  enter: {
+    paddingBottom: 15,
+  },
+  limits: {
+    paddingTop: 20,
   }
 });
